@@ -1,8 +1,8 @@
-// import "server-only";
+import "server-only";
 
-// import { StackServerApp } from "@/stackframe/stack"
+import { StackServerApp } from "@stackframe/stack";
+import { stackClientApp } from "./client";
 
-
-// export const stackServerApp = new StackServerApp({
-//   tokenStore: "nextjs-cookie",
-// });
+export const stackServerApp = new StackServerApp({
+  inheritsFrom: stackClientApp,
+});
