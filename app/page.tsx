@@ -1,9 +1,15 @@
+import { cookies } from "next/headers"; // Assicurati che sia importato
 import Link from "next/link";
 import { stackServerApp } from "@/stack/server";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
+
+  // 1. Ottieni l'istanza dei cookies (che è una Promise)
+  const cookieStore = await cookies()
+
   const user = await stackServerApp.getUser();
+ 
   if (user) {
     redirect("/dashboard");
   }
