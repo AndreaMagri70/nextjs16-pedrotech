@@ -27,6 +27,9 @@ import {
 //     where: { userId, name: { contains: q } },
 //    });
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 export default async function InventoryPage({
   searchParams,
 }: {
